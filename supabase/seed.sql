@@ -1,0 +1,3 @@
+-- Seed data is intentionally kept in the application mock-data module while
+-- SRC Connect is in prototype mode. Add approved institutional content here
+-- after linking a Supabase project and applying the initial migration.

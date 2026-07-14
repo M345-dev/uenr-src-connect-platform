@@ -1,0 +1,122 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(0.985 0.006 145);
+  --foreground: oklch(0.19 0.025 152);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.19 0.025 152);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.19 0.025 152);
+  --primary: oklch(0.39 0.12 153);
+  --primary-foreground: oklch(0.99 0.005 145);
+  --secondary: oklch(0.94 0.022 145);
+  --secondary-foreground: oklch(0.28 0.07 151);
+  --muted: oklch(0.96 0.01 145);
+  --muted-foreground: oklch(0.49 0.026 153);
+  --accent: oklch(0.86 0.17 87);
+  --accent-foreground: oklch(0.23 0.04 97);
+  --destructive: oklch(0.58 0.22 28);
+  --border: oklch(0.9 0.018 150);
+  --input: oklch(0.9 0.018 150);
+  --ring: oklch(0.52 0.14 151);
+  --success: oklch(0.55 0.15 150);
+  --warning: oklch(0.78 0.16 75);
+  --radius: 0.85rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --font-sans: "Plus Jakarta Sans", "Plus Jakarta Sans Fallback", ui-sans-serif, system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) * 0.65);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.35);
+  --radius-2xl: calc(var(--radius) * 1.8);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Plus Jakarta Sans", "Plus Jakarta Sans Fallback", ui-sans-serif, system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--accent) 55%, white);
+  color: var(--foreground);
+}
+
+.display-title {
+  font-size: clamp(2.75rem, 7vw, 6.75rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.065em;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.mesh-bg {
+  background-image:
+    radial-gradient(circle at 88% 8%, color-mix(in oklab, var(--accent) 22%, transparent) 0, transparent 30%),
+    radial-gradient(circle at 5% 75%, color-mix(in oklab, var(--primary) 10%, transparent) 0, transparent 35%);
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
